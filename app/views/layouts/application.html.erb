@@ -20,11 +20,10 @@
 			</div>
 		<% end %>
 		</div>
-
-		<div class="col-xs-4 slogan">
+		<div class="col-sm-4 hidden-xs slogan">
 			Quoting random, declarative statements from a master intellect.
 		</div>
-		<div class="col-xs-5 links">
+		<div class="col-xs-8 col-xs-offset-1 col-sm-offset-0 col-sm-5 links">
 			<!-- Button trigger modal -->
 			<%= link_to 'Contribute', '#', :data => {:toggle => 'modal', :target => '#myModal'} %>
 			&nbsp;
@@ -45,8 +44,9 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for Quote.new do |f| %>
-			<%= f.input :saying %>
-			<%= f.input :author %>
+			<%= f.input :saying, :label => "What is the quote you'd like to share?", :placeholder => "e.g., Be good and you will be lonesome." %>
+			<br />
+			<%= f.input :author, :label => "Author", :placeholder => "Mark Twain" %>
 		</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -72,10 +72,10 @@
 
 <div class="footer">
 	<div class="container">
-		<div class="col-xs-6">
+		<div class="col-xs-12 col-sm-6">
 			<%= link_to "I need more Twaineration!", root_path, :class => 'next-quote' %>
 		</div>
-		<div class="col-xs-6 footer-blurb">
+		<div class="col-xs-12 col-sm-6 footer-blurb">
 			Proudly hacked in New York, NY by <a href="http://www.ericandrade.com">Eric Andrade</a>.<br />
 			If you want to learn how to build your own Web App - <a href="http://thefirehoseproject.com">Learn how to code here.</a>
 		</div>
